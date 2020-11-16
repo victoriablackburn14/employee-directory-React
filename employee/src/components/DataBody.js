@@ -16,7 +16,7 @@ function userData({ users }) {
     <tbody>
       {users[0] !== undefined && users[0].name !== undefined ? (
         users.map(
-          ({ userName, name, picture, phoneNumber, email, dob }) => {
+          ({ userName, name, picture, phone, email, dob }) => {
             return (
               <tr key={userName}>
                 <td data-th="Image" className="align-middle">
@@ -30,7 +30,7 @@ function userData({ users }) {
                   {name.first} {name.last}
                 </td>
                 <td data-th="Phone" className="align-middle">
-                  {phoneNumber}
+                  {phone}
                 </td>
                 <td data-th="Email" className="align-middle">
                   <a href={"email to" + email} target="_blank">
