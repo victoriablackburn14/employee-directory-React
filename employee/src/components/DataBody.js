@@ -38,7 +38,7 @@ function userData({ users }) {
                   </a>
                 </td>
                 <td data-th="DOB" className="align-middle">
-                  {formatDate(birthDay.date)}
+                  {Date(birthDay.date)}
                 </td>
               </tr>
             );
