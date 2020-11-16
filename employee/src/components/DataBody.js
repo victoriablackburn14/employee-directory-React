@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/DataBody.css";
 
 function userData({ users }) {
-  function Date(date) {
+  function formatDate(date) {
     const dateArray = date.split("-");
     const year = dateArray[0];
     const month = dateArray[1];
@@ -16,9 +16,9 @@ function userData({ users }) {
     <tbody>
       {users[0] !== undefined && users[0].name !== undefined ? (
         users.map(
-          ({ userName, name, picture, phoneNumber, email, birthDay }) => {
+          ({ userName, name, picture, phoneNumber, email, dob }) => {
             return (
-              <tr key={userName.uuid}>
+              <tr key={userName}>
                 <td data-th="Image" className="align-middle">
                   <img
                     src={picture.medium}
@@ -38,7 +38,7 @@ function userData({ users }) {
                   </a>
                 </td>
                 <td data-th="DOB" className="align-middle">
-                  {Date(birthDay.date)}
+                  {formatDate(dob.date)}
                 </td>
               </tr>
             );
